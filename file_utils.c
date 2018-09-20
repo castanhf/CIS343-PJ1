@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#include <errno.h>
+#include <errno.h>
 //#include <errno-base.h>
 #include <sys/stat.h>
 #include "file_utils.h"
@@ -15,7 +15,7 @@ int read_file( char* filename, char **buffer ){
 	stat(filename, &st);
 	int size = st.st_size;
 
-	*buffer  = (char*)malloc(size * sizeof(char));
+	*buffer = (char*)malloc(size * sizeof(char));
 
 	input = fopen(filename, "r");
 
