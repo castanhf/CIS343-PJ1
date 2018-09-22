@@ -20,8 +20,8 @@ int read_file( char* filename, char **buffer ){
 	input = fopen(filename, "r");
 
 	if(input == NULL) {
-		fprintf(stderr, "File %s has not opened.", filename);
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "File %s has not opened to read.", filename);
+		exit(-1);
 	}
 
 	fgets(*buffer, size, input);
@@ -33,11 +33,19 @@ int read_file( char* filename, char **buffer ){
 int write_file( char* filename, char *buffer, int size ){
 	
 
-	FILE *output = fopen(filename, "w");
+	FILE *output;
+       
+	output = fopen(filename, "w");
+
+	if(output == NULL) {
+		fprintf(stderr, "File %s has not opened to write.", filename);
+		exit(-1);
+	}
 
 	int i;
 	for(i = 0; i < size ; i++){
 		fprintf(output, "%c", buffer[i]);
+		printf("%c", buffer[i]);
 	}
 
 	fclose(output);
