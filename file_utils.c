@@ -1,3 +1,14 @@
+/**
+ * file_utils.c
+ * @author: Filipe Castanheira
+ * @version: Fall 2018
+ * Date: 09/24/2018
+ *
+ * This C file contains the implementation code of all the
+ * functions in the header file_utils.h
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>

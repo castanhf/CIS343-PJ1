@@ -1,3 +1,17 @@
+/**
+ * reverse.c
+ * @author: Filipe Castanheira
+ * @version: Fall 2018
+ * Date: 09/24/2018
+ *
+ * This file contains a main method that executes the whole program.
+ * Notice that this file includes a user library file_utils.h, so
+ * the methods in file_utils.h are used in the main method.
+ * The process of reversing a content in a file happens in the said
+ * main method
+ *
+ */ 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -13,7 +27,7 @@ int main(int argc, char* argv[]){
 	char *writeDoc;
 	char *writeBuffer;
 
-	//pointer the a (char) pointer
+	//pointer to a (char) pointer
 	char **buf;
 	
 	//This char pointer stores the first argument
