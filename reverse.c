@@ -47,10 +47,15 @@ int main(int argc, char* argv[]){
 	//the execution of read_file method
 	numByte = read_file(readDoc, buf);
 
+	// printf("%d", numByte);
+
 	//Memory allocation
-	//writeBuffer gets borrows memoery from heap
+	//writeBuffer gets borrows memory from heap
 	//for future file writings
 	writeBuffer = (char*)malloc(numByte * sizeof(char*));
+
+	//Error handling: If the pointer writeBuffer is null,
+	//report error
 	if(writeBuffer == NULL) {
 		fprintf(stderr, "Insufficient memory! Make a memory allocation!\n");
 		exit(EXIT_FAILURE);
@@ -59,8 +64,8 @@ int main(int argc, char* argv[]){
 	//Reverse happens here
 	//Reversed array of chars are stored
 	//in char pointer writeBuffer
-	for(int i = 0; readDoc[i] != '\0'; i++) {
-		writeBuffer[i] = readDoc[numByte - i - 2];
+	for(int i = 0; i < numByte; i++) {
+		writeBuffer[i] = readDoc[numByte - (i + 1)];
 	}
 	
 	//The writing of the reversed array of chars
