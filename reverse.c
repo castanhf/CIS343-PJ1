@@ -52,7 +52,7 @@ int main(int argc, char* argv[]){
 	//Memory allocation
 	//writeBuffer gets borrows memory from heap
 	//for future file writings
-	writeBuffer = (char*)malloc(numByte * sizeof(char*));
+	writeBuffer = (char*)malloc(numByte * sizeof(char));
 
 	//Error handling: If the pointer writeBuffer is null,
 	//report error

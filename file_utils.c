@@ -49,7 +49,7 @@ int read_file( char* filename, char **buffer ){
 	}
 
 	//Process of reading the file
-	fgets(*buffer, size, input);
+	fread(*buffer, size, 1, input);
 
 
 	//Closes the file
